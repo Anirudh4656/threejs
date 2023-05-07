@@ -21,13 +21,7 @@ const Customizer = () => {
     logoShirt: true,
     stylishShirt: false,
   }) 
-  const readFile = (type) => {
-    reader(file)
-      .then((result) => {
-        handleDecals(type, result);
-        setActiveEditorTab("");
-      })
-  }
+ 
   const handleActiveFilterTab = (props) => {
     console.log(props)
     switch (tabName) {
@@ -50,6 +44,7 @@ const Customizer = () => {
         }
     })
 }
+////
     const handleDecals = (type, result) => {
         const decalType = DecalTypes[type]; 
     
@@ -58,6 +53,13 @@ const Customizer = () => {
         if(!activeFilterTab[decalType.filterTab]) {
           handleActiveFilterTab(decalType.filterTab)
         }
+      }
+      const readFile = (type) => {
+        reader(file)
+          .then((result) => {
+            handleDecals(type, result);
+            setActiveEditorTab("");
+          })
       }
       const handleSubmit= async(type)=>{
         if(!prompt) return alert ("please enter a prompt");

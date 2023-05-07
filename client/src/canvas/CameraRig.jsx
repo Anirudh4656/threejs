@@ -11,7 +11,7 @@ const CameraRig = ({children}) => {
     useFrame((state, delta) => {
         const isBreakpoint = window.innerWidth <= 1260;
         const isMobile = window.innerWidth <= 600;
-    
+        console.log(`am n camerarig useframe ${state}`)
         // set the initial position of the model
         let targetPosition = [-0.4, 0, 2];
         if(snap.intro) {
@@ -30,7 +30,7 @@ const CameraRig = ({children}) => {
             0.25,
             delta
           )})
-   
+
    
 
   return <group ref={group}>{children}</group>

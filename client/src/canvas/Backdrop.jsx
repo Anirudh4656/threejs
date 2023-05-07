@@ -8,6 +8,7 @@ const Backdrop = () => {
     const shadows = useRef();
 
     return (
+      
       <AccumulativeShadows
         ref={shadows}
         temporal
